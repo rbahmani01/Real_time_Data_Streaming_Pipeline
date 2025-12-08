@@ -1,0 +1,96 @@
+{
+  "id": null,
+  "uid": "house-sensors-15min",
+  "title": "House Sensors Overview - 15 min",
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "templating": {
+    "list": [
+      {
+        "name": "house_id",
+        "type": "query",
+        "datasource": "TimescaleDB",
+        "refresh": 1,
+        "hide": 0,
+        "query": "SELECT DISTINCT house_id FROM house_sensors_agg_15min ORDER BY house_id;",
+        "includeAll": false,
+        "multi": false,
+        "current": {
+          "text": "2113",
+          "value": "2113"
+        }
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "timeseries",
+      "title": "Average Power (kW) - 15 min",
+      "datasource": "TimescaleDB",
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 0 },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "time_series",
+          "rawSql": "SELECT\n  window_start AS time,\n  avg_power_kw AS value\nFROM house_sensors_agg_15min\nWHERE house_id = '$house_id'\nORDER BY window_start ASC;",
+          "timeColumn": "time"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "kw"
+        },
+        "overrides": []
+      }
+    },
+    {
+      "id": 2,
+      "type": "timeseries",
+      "title": "Average pv_panel_kw (kW) - 15 min",
+      "datasource": "TimescaleDB",
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 8 },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "time_series",
+          "rawSql": "SELECT\n  window_start AS time,\n  avg_pv_panel_kw AS value\nFROM house_sensors_agg_15min\nWHERE house_id = '$house_id'\nORDER BY window_start ASC;",
+          "timeColumn": "time"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "kw"
+        },
+        "overrides": []
+      }
+    },
+    {
+      "id": 3,
+      "type": "timeseries",
+      "title": "Average ev_charging_kw (kW) - 15 min",
+      "datasource": "TimescaleDB",
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 16 },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "time_series",
+          "rawSql": "SELECT\n  window_start AS time,\n  avg_ev_charging_kw AS value\nFROM house_sensors_agg_15min\nWHERE house_id = '$house_id'\nORDER BY window_start ASC;",
+          "timeColumn": "time"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "kw"
+        },
+        "overrides": []
+      }
+    }
+  ]
+}

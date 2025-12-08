@@ -1,0 +1,6 @@
+venv/
+minio-data/
+minio_data_venv/
+duck_db_venv/
+superset_home/
+timescale-data/

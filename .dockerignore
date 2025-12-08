@@ -1,0 +1,3 @@
+venv/
+minio_data_venv/
+duck_db_venv/
