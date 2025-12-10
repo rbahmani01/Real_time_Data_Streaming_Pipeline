@@ -6,7 +6,7 @@
 
 End-to-end, containerised streaming pipeline for **house sensors data**:
 
-- **Python producer** generates synthetic measurements for ~10,000 houses.
+- **Python producer** generates synthetic measurements for ~10,000 houses per second.
 - **Kafka** ingests JSON events into a topic.
 - **Spark Structured Streaming – Job 1** reads Kafka and writes a **Silver** layer to **MinIO** as Parquet, partitioned by **date and hour**.
 - **Spark Structured Streaming – Job 2** reads from Silver, computes **1‑minute** and **15‑minute** aggregates, and writes:
