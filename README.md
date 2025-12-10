@@ -52,8 +52,8 @@ Each event looks like:
 {
   "house_id": "2113",
   "timestamp": "2025-12-06T08:26:19.230240+00:00",
-  "pv_panel_kw": 29.78,
-  "ev_charging_kw": 65.09,
+  "pv_panel_kw": 4.78,
+  "ev_charging_kw": 7.09,
   "power_kw": 0.142,
   "voltage": 219.9
 }
