@@ -14,7 +14,9 @@ End-to-end, containerised streaming pipeline for **house sensors data**:
   - aggregated time-series into **TimescaleDB** (PostgreSQL).
 - **Grafana** connects to TimescaleDB and shows prebuilt dashboards.
 
-![Diagram](assets/images/Diagram_1.png)
+<p align="center">
+  <img src="assets/images/Diagram_1.png" alt="System Diagram" width="80%">
+</p>
 
 
 This README is designed as a **comprehensive, step‑by‑step guide for new users**.
@@ -318,7 +320,9 @@ docker ps
 
 You should see all the above containers listed.
 
-![Docker](assets/images/Docker_1.png)
+<p align="center">
+  <img src="assets/images/Docker_1.png" alt="Docker Containers" width="80%">
+</p>
 
 ### 7.1 Important service endpoints
 
@@ -624,7 +628,9 @@ Notes:
 - This is a long‑running streaming job; keep this terminal open.
 - You can monitor execution via the Spark UI at <http://localhost:9090>.
 
-![Spark](assets/images/Spark_1.png)
+<p align="center">
+  <img src="assets/images/Spark_1.png" alt="Apache Spark" width="80%">
+</p>
 
 
 ### 12.3 What to expect in MinIO
@@ -700,7 +706,9 @@ After a bit of data has flowed through:
 8. The job waits for any stream termination (it is long‑running).
 
 
-![MinIO](assets/gifs/minio_demo.gif)
+<p align="center">
+  <img src="assets/gifs/minio_demo.gif" alt="MinIO" width="80%">
+</p>
 
 ### 13.2 Paths and configuration
 
