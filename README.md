@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/images/cover_1.png" width="600">
+  <img src="assets/images/cover_1.png" width="80%">
 </p>
 
 # Real-time Streaming Pipeline: Kafka → Spark → MinIO → TimescaleDB → Grafana
@@ -17,7 +17,7 @@ End-to-end, containerised streaming pipeline for **house sensors data**:
 ![Diagram](assets/images/Diagram_1.png)
 
 
-This README is designed as a **comprehensive, step‑by‑step guide for new users**, based entirely on the code and Markdown files in this repository.
+This README is designed as a **comprehensive, step‑by‑step guide for new users**.
 
 ---
 
@@ -75,6 +75,13 @@ The pipeline:
    - Writes **Gold** Parquet files to MinIO.
    - Writes aggregated time‑series rows into **TimescaleDB**.
 4. Grafana connects to TimescaleDB and displays live dashboards.
+
+<p align="center">
+  <img src="assets/gifs/grafana_demo.gif" alt="Grafana Dashboard" width="80%">
+</p>
+<p align="center">
+  <em>The expected Grafana dashboard</em>
+</p>
 
 ---
 
@@ -846,9 +853,6 @@ They:
 - Query `house_sensors_agg_1min` and `house_sensors_agg_15min`.
 - Provide filters such as `house_id`.
 - Show time‑series of average/max `power_kw`, as well as PV and EV charging power over time.
-
-![Grafana](assets/gifs/grafana_demo.gif)
-
 
 ---
 
